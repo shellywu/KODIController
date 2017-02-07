@@ -15,6 +15,7 @@ namespace KODIRemoteController
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+           
             InitControlAction();
         }
 
@@ -26,7 +27,7 @@ namespace KODIRemoteController
                
                 var reqData = new Model.RPCRequestModel();
                 reqData.Id = 1;
-                reqData.Method = "System.Shutdown";
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.System.ShutDown);
                 var rpcClient = new Model.JsonRpcClient(_serverHost);
                 await  rpcClient.SendRequstAsync(reqData);
             };
@@ -36,10 +37,51 @@ namespace KODIRemoteController
             {
                 var reqData = new Model.RPCRequestModel();
                 reqData.Id = 1;
-                reqData.Method = "Input.Up";
+                reqData.Method =Model.Helper.GetEnumMethodName(Model.Input.Up);
                 var rpcClient = new Model.JsonRpcClient(_serverHost);
                 await rpcClient.SendRequstAsync(reqData);
             };
+
+            var btnDown = FindViewById<Button>(Resource.Id.btnDown);
+            btnDown.Click += async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Down);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
+            var btnLeft = FindViewById<Button>(Resource.Id.btnLeft);
+            btnLeft.Click+= async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Left);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
+            var btnRight = FindViewById<Button>(Resource.Id.btnRight);
+            btnRight.Click += async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Right);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
+            var btnOk = FindViewById<Button>(Resource.Id.btnOk);
+            btnOk.Click += async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Select);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
         }
     }
 }

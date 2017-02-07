@@ -12,11 +12,10 @@ using Android.Widget;
 
 namespace KODIRemoteController.Model
 {
-    class RPCRequestModel
+    class Helper
     {
-        public int Id { get; set; } = 1;
-        public string Jsonrpc { get; set; } = "2.0";
-        public string Method { get; set; }
-        public object Params { get; set; }
+        public static string GetEnumMethodName(Enum code) {
+            return $"{code.GetType().Name}.{code.ToString()}";
+        }
     }
 }
