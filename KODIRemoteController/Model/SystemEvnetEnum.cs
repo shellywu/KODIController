@@ -25,7 +25,8 @@ namespace KODIRemoteController.Model
         Left = 2,
         Right = 3,
         Select = 4,
-        Home = 5
+        Home = 5,
+        Back=6
     }
     enum Application
     {

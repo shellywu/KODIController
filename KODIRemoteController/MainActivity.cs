@@ -82,6 +82,26 @@ namespace KODIRemoteController
                 await rpcClient.SendRequstAsync(reqData);
             };
 
+            var btnBack = FindViewById<Button>(Resource.Id.btnBack);
+            btnBack.Click+= async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Back);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
+            var btnHome = FindViewById<ImageButton>(Resource.Id.btnHome);
+            btnHome.Click += async (sender, args) =>
+            {
+                var reqData = new Model.RPCRequestModel();
+                reqData.Id = 1;
+                reqData.Method = Model.Helper.GetEnumMethodName(Model.Input.Home);
+                var rpcClient = new Model.JsonRpcClient(_serverHost);
+                await rpcClient.SendRequstAsync(reqData);
+            };
+
         }
     }
 }
