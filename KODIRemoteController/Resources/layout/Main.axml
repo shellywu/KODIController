@@ -6,26 +6,28 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="55.0dp"
-        android:id="@+id/linearLayout1">
+        android:layout_height="80.0dp"
+        android:id="@+id/linearLayout1"
+        android:background="@android:color/background_light"
+        android:layout_marginBottom="23.0dp">
         <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btnShutDown"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/shutdown" />
         <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btnHome"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/home" />
         <ImageButton
-            android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btnVolZero"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/mute" />
     </LinearLayout>
     <GridLayout
         android:layout_width="match_parent"
